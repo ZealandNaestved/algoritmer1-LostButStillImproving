@@ -17,6 +17,9 @@ public class Data {
     public String[] getRandomDrengeNavne() {
         return randomDrengeNavne;
     }
+    public String[] getRandomPigeNavne() {
+        return randomPigeNavne;
+    }
 
     public static void main(String[] args) {
         randomNumbers(10, 10);
@@ -30,7 +33,6 @@ public class Data {
         System.out.print(new Random().nextInt(max));
         System.out.print("}");
     }
-
 
 
 
