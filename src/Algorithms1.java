@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.stream.IntStream;
 
 /**
  * Developed by András Ács (acsandras@gmail.com)
@@ -8,6 +9,8 @@ import java.util.Random;
  */
 
 public class Algorithms1 {
+    Random random = new Random();
+
 
     // TODO 1 - Gennemse Data klassen, og skriv gode kommentarer til det
 
@@ -27,6 +30,15 @@ public class Algorithms1 {
 
     public static void main(String[] args) {
         exampleOfPredictableRandomNumber();
+        Algorithms1 algo = new Algorithms1();
+        IntStream.range(0,101).forEach(it -> algo.randomBoyName());
+    }
+
+    String randomBoyName() {
+
+        String[] drengeNavne = new Data().getRandomDrengeNavne();
+        return drengeNavne[random.nextInt(drengeNavne.length)];
+
     }
 
     private static void exampleOfPredictableRandomNumber() {
