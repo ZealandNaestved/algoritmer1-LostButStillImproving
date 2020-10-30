@@ -36,7 +36,6 @@ public class Algorithms1 {
         Algorithms1 algo1 = new Algorithms1();
         System.out.println(algo.randomName());
         System.out.println(algo1.randomName());
-        //test push
     }
 
     String randomBoyName() {
