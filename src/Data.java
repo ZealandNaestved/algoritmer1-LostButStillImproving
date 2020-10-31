@@ -17,6 +17,15 @@ public class Data {
     public String[] getRandomDrengeNavne() {
         return randomDrengeNavne;
     }
+
+    public int[] getRandomNumbers1000() {
+        return randomNumbers1000;
+    }
+
+    public int[] getRandomNumbers10() {
+        return randomNumbers10;
+    }
+
     public String[] getRandomPigeNavne() {
         return randomPigeNavne;
     }
