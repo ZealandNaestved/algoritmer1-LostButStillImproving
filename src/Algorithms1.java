@@ -8,9 +8,10 @@ import java.util.Random;
  * 27/10/2020
  */
 
-public class Algorithms1 {
+public enum  Algorithms1 {
+    ALGO1;
     Random random = new Random();
-    static Algorithms1 algo = new Algorithms1();
+
 
 
     // TODO 1 - Gennemse Data klassen, og skriv gode kommentarer til det
@@ -31,33 +32,28 @@ public class Algorithms1 {
 
     public static void main(String[] args) {
 
-        System.out.println(algo.randomGirlName());
-        System.out.println(algo.randomBoyName());
-        System.out.println(algo.randomName());
-        System.out.println(algo.randomLetter());
-        System.out.println(algo.headOrTails());
-
+        System.out.println(ALGO1.randomGirlName());
+        System.out.println(ALGO1.randomBoyName());
+        System.out.println(ALGO1.randomName());
+        System.out.println(ALGO1.randomLetter());
+        System.out.println(ALGO1.headOrTails());
     }
 
     String randomBoyName() {
 
-        String[] drengeNavne = new Data().getRandomDrengeNavne();
-        return drengeNavne[random.nextInt(drengeNavne.length)];
-
+        return Data.DATA.getRandomDrengeNavne()[random.nextInt(Data.DATA.getRandomDrengeNavne().length)];
     }
 
     String randomGirlName() {
 
-        String[] pigeNavne = new Data().getRandomPigeNavne();
-        return pigeNavne[random.nextInt(pigeNavne.length)];
-
+        return Data.DATA.getRandomPigeNavne()[random.nextInt(Data.DATA.getRandomPigeNavne().length)];
     }
     String randomName() {
         ArrayList<String> names = new ArrayList<>();
         names.add(randomGirlName());
         names.add(randomBoyName());
-        return names.get(random.nextInt(2));
 
+        return names.get(random.nextInt(2));
     }
 
     char randomLetter() {
@@ -66,6 +62,7 @@ public class Algorithms1 {
         return letters.charAt(random.nextInt(letters.length()));
     }
     Boolean headOrTails() {
+
         return random.nextBoolean();
     }
 

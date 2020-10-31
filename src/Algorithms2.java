@@ -13,8 +13,8 @@ import static java.util.Arrays.stream;
  * 27/10/2020
  */
 
-public class Algorithms2 {
-    Data data = new Data();
+public enum Algorithms2 {
+    ALGO2;
 
     // TODO 1 Skriv en metode her i denne klasse, som kan finde et tal i Data klassens randomNumbers1000 felt med LINEAR SEARCH
 
@@ -28,8 +28,8 @@ public class Algorithms2 {
 
     // TODO 6 Skriv en metode her i denne klasse, som kan finde et navn i Data klassens randomDrengeNavne felt med BINARY SEARCH
     public int findNumberLinear(int number) {
-        for (int i = 0; i < data.getRandomNumbers1000().length; i++) {
-            if (data.getRandomNumbers1000()[i] == number) {
+        for (int i = 0; i < Data.DATA.getRandomNumbers1000().length; i++) {
+            if (Data.DATA.getRandomNumbers1000()[i] == number) {
                 return i;
             }
         }
@@ -37,8 +37,8 @@ public class Algorithms2 {
     }
 
     public int findBoyNameLinear(String name){
-        for (int i = 0; i < data.getRandomNumbers1000().length; i++) {
-            if (data.getRandomDrengeNavne()[i].equals(name)) {
+        for (int i = 0; i < Data.DATA.getRandomNumbers1000().length; i++) {
+            if (Data.DATA.getRandomDrengeNavne()[i].equals(name)) {
                 return i;
             }
         }
@@ -47,28 +47,27 @@ public class Algorithms2 {
 
 
     public int[] sortNumbersArray(){
-        return stream(data.getRandomNumbers1000()).sorted().toArray();
+        return stream(Data.DATA.getRandomNumbers1000()).sorted().toArray();
     }
     public List<String> sortBoyNameArray(){
-        return stream(data.getRandomDrengeNavne()).sorted().collect(Collectors.toList());
+        return stream(Data.DATA.getRandomDrengeNavne()).sorted().collect(Collectors.toList());
     }
 
     public int binarySearchNumber(int number){
-        return binarySearch(data.getRandomNumbers1000(),number);
+        return binarySearch(Data.DATA.getRandomNumbers1000(),number);
     }
 
     public int binarySearchName(String name){
-        return binarySearch(data.getRandomDrengeNavne(), name);
+        return binarySearch(Data.DATA.getRandomDrengeNavne(), name);
     }
 
     public static void main(String[] args) {
-        Algorithms2 algo2 = new Algorithms2();
-        System.out.println(algo2.findNumberLinear(1336));
-        System.out.println(algo2.findBoyNameLinear("Faktor"));
-        stream(algo2.sortNumbersArray()).forEach(System.out::println);
-        System.out.println(algo2.sortBoyNameArray().get(0));
-        System.out.println(algo2.binarySearchNumber(5));
-        System.out.println(algo2.binarySearchName("Awesome"));
+        System.out.println(ALGO2.findNumberLinear(1336));
+        System.out.println(ALGO2.findBoyNameLinear("Faktor"));
+        stream(ALGO2.sortNumbersArray()).forEach(System.out::println);
+        System.out.println(ALGO2.sortBoyNameArray().get(0));
+        System.out.println(ALGO2.binarySearchNumber(5));
+        System.out.println(ALGO2.binarySearchName("Awesome"));
 
     }
 }
