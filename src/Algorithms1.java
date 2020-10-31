@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
-import java.util.stream.IntStream;
 
 /**
  * Developed by András Ács (acsandras@gmail.com)
@@ -12,6 +10,7 @@ import java.util.stream.IntStream;
 
 public class Algorithms1 {
     Random random = new Random();
+    static Algorithms1 algo = new Algorithms1();
 
 
     // TODO 1 - Gennemse Data klassen, og skriv gode kommentarer til det
@@ -31,11 +30,13 @@ public class Algorithms1 {
     // TODO 8 - Skriv en  plet eller krone generator metode (plet er boolean true og krone er boolean false)
 
     public static void main(String[] args) {
-        exampleOfPredictableRandomNumber();
-        Algorithms1 algo = new Algorithms1();
-        Algorithms1 algo1 = new Algorithms1();
+
+        System.out.println(algo.randomGirlName());
+        System.out.println(algo.randomBoyName());
         System.out.println(algo.randomName());
-        System.out.println(algo1.randomName());
+        System.out.println(algo.randomLetter());
+        System.out.println(algo.headOrTails());
+
     }
 
     String randomBoyName() {
@@ -64,15 +65,8 @@ public class Algorithms1 {
 
         return letters.charAt(random.nextInt(letters.length()));
     }
-
     Boolean headOrTails() {
         return random.nextBoolean();
     }
 
-    private static void exampleOfPredictableRandomNumber() {
-        Random random = new Random();
-        random.setSeed(15L); // Hvis vi angiver et seed som et long number, vil random klassen altid generere det samme tal, i det her tilfælde 21
-        System.out.print("Hvis vi bruger seed, vil random altid returnere de samme værdier, f.eks. giver denne 21 --> ");
-        System.out.println(random.nextInt(45));
-    }
 }

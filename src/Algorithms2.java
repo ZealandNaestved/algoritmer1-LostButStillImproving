@@ -36,7 +36,7 @@ public class Algorithms2 {
         return -1;
     }
 
-    public int findNameLinear(String name){
+    public int findBoyNameLinear(String name){
         for (int i = 0; i < data.getRandomNumbers1000().length; i++) {
             if (data.getRandomDrengeNavne()[i].equals(name)) {
                 return i;
@@ -44,6 +44,8 @@ public class Algorithms2 {
         }
         return -1;
     }
+
+
     public int[] sortNumbersArray(){
         return stream(data.getRandomNumbers1000()).sorted().toArray();
     }
@@ -55,12 +57,18 @@ public class Algorithms2 {
         return binarySearch(data.getRandomNumbers1000(),number);
     }
 
+    public int binarySearchName(String name){
+        return binarySearch(data.getRandomDrengeNavne(), name);
+    }
+
     public static void main(String[] args) {
         Algorithms2 algo2 = new Algorithms2();
         System.out.println(algo2.findNumberLinear(1336));
-        System.out.println(algo2.findNameLinear("Faktor"));
+        System.out.println(algo2.findBoyNameLinear("Faktor"));
         stream(algo2.sortNumbersArray()).forEach(System.out::println);
         System.out.println(algo2.sortBoyNameArray().get(0));
         System.out.println(algo2.binarySearchNumber(5));
+        System.out.println(algo2.binarySearchName("Awesome"));
+
     }
 }
